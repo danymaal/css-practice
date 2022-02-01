@@ -1,0 +1,242 @@
+body {
+  background-color: rgb(65, 65, 65);
+}
+
+.title {
+  color: rgb(209, 19, 19);
+}
+
+.paragraph {
+  color: rgba(245, 222, 179, 0.692);
+}
+
+/* BOX MODEL */
+
+/* 1. The content */
+/* 2. Padding represents the space between the content the border. it's suppose to give more room around the content itself   */
+/* 3. The border is the divider between the padding and margin */
+/* 4. The margin is the space between the border and all other content  */
+
+.gift {
+  width: 20%;
+  border: 5px double rgb(226, 208, 211);
+  padding: 15px;
+  margin: 12px;
+  float: right;
+}
+
+.tesla {
+  width: 50%;
+  border: 5px solid black;
+  padding: 100px 20px 10px 5px;
+  /*  top right bottom left */
+  margin: 10px 20px;
+  /* top, bottom  left, right  */
+  display: inline-block;
+}
+
+/* FLOAT AND DISPLAY TYPES */
+
+/* Theres a block and inline elements. The blocks elements (p) goes to it own block section, inline elements (span) won't move anything in it's own section  */
+/* https://www.w3schools.com/html/html_blocks.asp */
+
+/* 1. Float:
+    inherit - copie paren't float property  */
+/* 2.Display:
+    inline-block don't put element on a new line but makes some space around it */
+
+/* FLEXBOX */
+/* A flexbox element is spit into two main parts: the container, and the items */
+
+.container {
+  background-color: rgb(119, 66, 66);
+  margin: 10px;
+
+  display: flex;
+  /* Adding a display: flex to a parent element is gonna to set up all the default flex properties and create a flex container with we want to work with*/
+  flex-direction: row;
+  /* Flex direction is about how elements placed to each other (inline or row)*/
+  flex-wrap: wrap;
+  /* Flex wrap sets whether flex items are forced onto one line or can wrap onto multiple lines */
+}
+
+.container-second {
+  background-color: rgba(255, 192, 203, 0.472);
+  margin: 10px;
+  height: 300px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /*Justify-content - defines spacing between elements horisontally: space-around, space-between, center, flex-start, flex-end */
+  align-items: center;
+  /* Align items - vertically: center, flex-start, flex-end, baseline   */
+}
+
+.container-item {
+  background-color: green;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+
+  width: 70px;
+  line-height: 50px;
+  margin: 10px;
+
+  /* You can change the order of elements by using ORDER PROPERTY in each one */
+  /* FLEX-BASIS sets the initial main size of a flex item  */
+  /* FLEX-GROW sets size that element can take for itself */
+  /* FLEX-SHRINK - сокращать, определяет на сколько элементы сокращаються: 0 - no shrink, 1 - default, the bigger number the more it shrinks  */
+
+  /* FLEX: grow shrink basis */
+}
+
+.photos-container {
+  background-color: rgba(127, 255, 212, 0.411);
+  display: flex;
+  padding: 100px;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+.photo {
+  margin: 20px;
+  background-color: red;
+}
+
+.paragraph-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(0, 128, 0, 0.432);
+  line-height: 20px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* GRID */
+
+.grid-container {
+  background-color: rgba(138, 129, 129, 0.863);
+  margin: 10px;
+  height: 300px;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* grid-column-gap: 100px; */
+
+  grid-template-rows: auto auto;
+  /* grid-row-gap: 100px; */
+
+  /* grid-gap: 150px 300px  ; */
+  /*     row column */
+  /* justify-content: space-evenly; */
+  /* justify-content: end, start, center, space-evenly, space-around */
+  /* align-content:center ; */
+  /* aling-content: start, end, center, space-between, space-evenly */
+}
+
+.grid-item {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+
+  width: 70px;
+  margin: 10px;
+}
+
+.grid-practice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* fr: 
+        1fr , 2f = 1 column = 1/3 2 column = 2/3    
+        repeat(10 , 1fr)
+        amount of coloms, size
+        */
+  /* grid-template-rows: 100px 200px 300px 200px; */
+  grid-gap: 10px;
+  grid-auto-rows: minmax(10px, auto);
+  /* if row property does'nt defined earlier */
+  justify-content: center;
+  /* alighn-content  */
+
+  /* Выравнивание относительно ячейки  */
+  /* ось y */
+  /* align-items: center; */
+  /* ось x */
+  /* justify-items: center; */
+  /* SPAN it's like 1 section (ex. span 3 - 3 sections) */
+}
+
+/* ДЛЯ ОТДЕЛЬНОГО ЭЛЕМЕНТА */
+.item_3 {
+    grid-column-start: 2;
+  /* justify-self: end;
+        align-self: end; */
+  /* Kaкое количество строк и столбцов он занимает */
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2 / 10;
+}
+
+.item_7 {
+  grid-row-start: 1;
+}
+
+.item {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: rgb(172, 167, 167);
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'sidebar content';
+  grid-gap: 10px;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 50px 1fr ;
+}
+
+.header {
+  grid-area: header;
+  
+}
+
+.sidebar {
+  grid-area: sidebar;
+  align-self: start;
+}
+
+.content {
+  grid-area: content;
+}
+
+.thing {
+  background-color: white;
+  padding: 10px;
+  border: 4px solid black;
+}
+
+
+/* POSITIONS */
+/* STATIC (default)  RELATIVE ABSOLUTE FIXED STICKY */
+/* REALATIVE - двигай как хочешь другие элементы не задевай */
+/* ABSOLUTE - элемент позиционируется относительно елемента родителя или самой страницы */
+/* FIXED - закреплен на экране */
+/* STICKY - закреплен в рамках одного блока */
+
+
+
